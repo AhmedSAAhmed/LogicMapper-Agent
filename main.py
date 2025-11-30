@@ -38,8 +38,7 @@ async def run_modernization_task(repo_url: str):
     logger.info(f"🚀 Starting Modernization Task for: {repo_url}")
 
     # Initialize the Brain (The Orchestrator)
-    # Note: AI Studio uses "gemini-1.5-pro-latest" or similar model names
-    orchestrator = OrchestratorAgent(model_name="gemini-1.5-pro-latest")
+    orchestrator = OrchestratorAgent(model_name="gemini-2.0-flash")
 
     try:
         # Run the Agentic Workflow
