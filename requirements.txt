@@ -1,0 +1,21 @@
+# --- Google Cloud Core (The "ADK" Foundation) ---
+google-adk
+google-cloud-aiplatform>=1.38.0  # The main SDK for Vertex AI & Gemini
+google-generativeai>=0.3.0       # Fallback/alternative for rapid prototyping (AI Studio)
+google-cloud-logging             # For the "Observability" requirement
+
+# --- Data & Validation (Structured Output) ---
+pydantic>=2.0.0                  # Crucial for defining Agent Schemas & Tool Inputs
+
+# --- Memory & Vector Search (The "Memory Bank") ---
+chromadb>=0.4.0                  # Local Vector Store for Long-Term Memory
+numpy                            # For vector math operations
+
+# --- Tools & Utilities ---
+# (Note: Google Search is built into Vertex AI, so no external search lib needed)
+python-dotenv                    # To load API keys securely
+aiohttp                          # For async/parallel agent operations (Parallel Agents)
+
+# --- Frontend (UI) ---
+streamlit                        # The fastest way to build your demo UI
+watchdog                         # For auto-reloading the UI
