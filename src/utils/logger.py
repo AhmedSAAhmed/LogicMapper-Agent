@@ -1,5 +1,6 @@
 import logging
 import sys
+import io
 
 def setup_logger(name: str = "LogicMapper") -> logging.Logger:
     """
@@ -19,8 +20,21 @@ def setup_logger(name: str = "LogicMapper") -> logging.Logger:
         
     logger.setLevel(logging.INFO)
     
-    # Create console handler
-    handler = logging.StreamHandler(sys.stdout)
+    # Create console handler with UTF-8 encoding support
+    # This prevents UnicodeEncodeError when logging emoji characters on Windows
+    try:
+        # Wrap stdout with UTF-8 encoding, replacing unencodable characters
+        utf8_stdout = io.TextIOWrapper(
+            sys.stdout.buffer,
+            encoding='utf-8',
+            errors='replace',  # Replace unencodable characters with '?'
+            line_buffering=True
+        )
+        handler = logging.StreamHandler(utf8_stdout)
+    except (AttributeError, io.UnsupportedOperation):
+        # Fallback to regular stdout if wrapping fails
+        handler = logging.StreamHandler(sys.stdout)
+    
     handler.setLevel(logging.INFO)
     
     # Create formatter

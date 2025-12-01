@@ -59,11 +59,30 @@ class VectorStore:
         self.embedding_function = GeminiEmbeddingFunction()
         
         # Get or create collection for business rules
-        self.collection = self.client.get_or_create_collection(
-            name="business_rules",
-            embedding_function=self.embedding_function,
-            metadata={"description": "Extracted business rules from legacy code"}
-        )
+        # Handle migration from old embedding function
+        try:
+            self.collection = self.client.get_or_create_collection(
+                name="business_rules",
+                embedding_function=self.embedding_function,
+                metadata={"description": "Extracted business rules from legacy code"}
+            )
+        except Exception as e:
+            if "embedding function" in str(e).lower() or "embedding" in str(e).lower():
+                # Delete old collection and create new one
+                logger.warning("⚠️ Detected old embedding function. Migrating to Gemini embeddings...")
+                try:
+                    self.client.delete_collection("business_rules")
+                    logger.info("🗑️ Deleted old collection")
+                except Exception as del_err:
+                    logger.warning(f"Could not delete old collection: {del_err}")
+                self.collection = self.client.get_or_create_collection(
+                    name="business_rules",
+                    embedding_function=self.embedding_function,
+                    metadata={"description": "Extracted business rules from legacy code"}
+                )
+                logger.info("✅ Migration complete. Memory bank reset.")
+            else:
+                raise e
         
         logger.info(f"✅ Vector store initialized at {persist_directory}")
         logger.info(f"📊 Current collection size: {self.collection.count()} rules")

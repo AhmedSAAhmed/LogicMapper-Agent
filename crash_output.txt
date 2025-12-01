@@ -1,0 +1,265 @@
+﻿python : --- Logging 
+error ---
+At line:1 char:31
++ ... venv\Scripts\Ac
+tivate.ps1; python te
+st_crash_detailed.py 
+2>&1 | Out-F ...
++                    
+            ~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (--- Log   
+ ging error ---:S    
+tring) [], Remot    
+eException
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+Traceback (most 
+recent call last):
+  File "C:\Users\MY P
+C\AppData\Local\Progr
+ams\Python\Python313\
+Lib\logging\__init__.
+py", line 1154, in 
+emit
+    stream.write(msg 
++ self.terminator)
+    ~~~~~~~~~~~~^^^^^
+^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MY P
+C\AppData\Local\Progr
+ams\Python\Python313\
+Lib\encodings\cp1252.
+py", line 19, in 
+encode
+    return codecs.cha
+rmap_encode(input,sel
+f.errors,encoding_tab
+le)[0]
+           ~~~~~~~~~~
+~~~~~~~~~~~^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
+^^^
+UnicodeEncodeError: 
+'charmap' codec 
+can't encode 
+character 
+'\U0001f916' in 
+position 44: 
+character maps to 
+<undefined>
+Call stack:
+  File "D:\LogicMappe
+r-Agent\LogicMapper-A
+gent\test_crash_detai
+led.py", line 38, in 
+<module>
+    asyncio.run(test_
+crash())
+  File "C:\Users\MY P
+C\AppData\Local\Progr
+ams\Python\Python313\
+Lib\asyncio\runners.p
+y", line 195, in run
+    return 
+runner.run(main)
+  File "C:\Users\MY P
+C\AppData\Local\Progr
+ams\Python\Python313\
+Lib\asyncio\runners.p
+y", line 118, in run
+    return self._loop
+.run_until_complete(t
+ask)
+  File "C:\Users\MY P
+C\AppData\Local\Progr
+ams\Python\Python313\
+Lib\asyncio\base_even
+ts.py", line 712, in 
+run_until_complete
+    
+self.run_forever()
+  File "C:\Users\MY P
+C\AppData\Local\Progr
+ams\Python\Python313\
+Lib\asyncio\base_even
+ts.py", line 683, in 
+run_forever
+    self._run_once()
+  File "C:\Users\MY P
+C\AppData\Local\Progr
+ams\Python\Python313\
+Lib\asyncio\base_even
+ts.py", line 2042, 
+in _run_once
+    handle._run()
+  File "C:\Users\MY P
+C\AppData\Local\Progr
+ams\Python\Python313\
+Lib\asyncio\events.py
+", line 89, in _run
+    self._context.run
+(self._callback, 
+*self._args)
+  File "D:\LogicMappe
+r-Agent\LogicMapper-A
+gent\test_crash_detai
+led.py", line 23, in 
+test_crash
+    orchestrator = Or
+chestratorAgent(model
+_name="gemini-2.0-fla
+sh")
+  File "D:\LogicMappe
+r-Agent\LogicMapper-A
+gent\src\agents\orche
+strator.py", line 
+18, in __init__
+    logger.info(f"\U0
+001f916 Orchestrator 
+initialized with 
+model: {model_name}")
+Message: '\U0001f916 
+Orchestrator 
+initialized with 
+model: 
+gemini-2.0-flash'
+Arguments: ()
+Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+asyncio.to_thread available: True
+Starting test...
+Processing repository...
+2025-12-01 14:43:14 - Orchestrator - INFO - Orchestrator processing repo: test_legacy_code.py
+--- Logging error ---
+Traceback (most 
+recent call last):
+  File "C:\Users\MY P
+C\AppData\Local\Progr
+ams\Python\Python313\
+Lib\logging\__init__.
+py", line 1154, in 
+emit
+    stream.write(msg 
++ self.terminator)
+    ~~~~~~~~~~~~^^^^^
+^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MY P
+C\AppData\Local\Progr
+ams\Python\Python313\
+Lib\encodings\cp1252.
+py", line 19, in 
+encode
+    return codecs.cha
+rmap_encode(input,sel
+f.errors,encoding_tab
+le)[0]
+           ~~~~~~~~~~
+~~~~~~~~~~~^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
+^^^
+UnicodeEncodeError: 
+'charmap' codec 
+can't encode 
+character '\u2705' 
+in position 43: 
+character maps to 
+<undefined>
+Call stack:
+  File "D:\LogicMappe
+r-Agent\LogicMapper-A
+gent\test_crash_detai
+led.py", line 38, in 
+<module>
+    asyncio.run(test_
+crash())
+  File "C:\Users\MY P
+C\AppData\Local\Progr
+ams\Python\Python313\
+Lib\asyncio\runners.p
+y", line 195, in run
+    return 
+runner.run(main)
+  File "C:\Users\MY P
+C\AppData\Local\Progr
+ams\Python\Python313\
+Lib\asyncio\runners.p
+y", line 118, in run
+    return self._loop
+.run_until_complete(t
+ask)
+  File "C:\Users\MY P
+C\AppData\Local\Progr
+ams\Python\Python313\
+Lib\asyncio\base_even
+ts.py", line 712, in 
+run_until_complete
+    
+self.run_forever()
+  File "C:\Users\MY P
+C\AppData\Local\Progr
+ams\Python\Python313\
+Lib\asyncio\base_even
+ts.py", line 683, in 
+run_forever
+    self._run_once()
+  File "C:\Users\MY P
+C\AppData\Local\Progr
+ams\Python\Python313\
+Lib\asyncio\base_even
+ts.py", line 2042, 
+in _run_once
+    handle._run()
+  File "C:\Users\MY P
+C\AppData\Local\Progr
+ams\Python\Python313\
+Lib\asyncio\events.py
+", line 89, in _run
+    self._context.run
+(self._callback, 
+*self._args)
+  File "D:\LogicMappe
+r-Agent\LogicMapper-A
+gent\test_crash_detai
+led.py", line 26, in 
+test_crash
+    final_report = 
+await orchestrator.pr
+ocess_repository("tes
+t_legacy_code.py")
+  File "D:\LogicMappe
+r-Agent\LogicMapper-A
+gent\src\agents\orche
+strator.py", line 
+31, in 
+process_repository
+    analyst = Analyst
+Agent(self.model_name
+)
+  File "D:\LogicMappe
+r-Agent\LogicMapper-A
+gent\src\agents\analy
+st.py", line 17, in 
+__init__
+    
+self.vector_store = 
+VectorStore()
+  File "D:\LogicMappe
+r-Agent\LogicMapper-A
+gent\src\memory\vecto
+r_store.py", line 
+87, in __init__
+    
+logger.info(f"\u2705 
+Vector store 
+initialized at 
+{persist_directory}")
+Message: '\u2705 
+Vector store 
+initialized at 
+./chroma_db_data'
+Arguments: ()
