@@ -19,7 +19,7 @@ class OrchestratorAgent:
 
     async def process_repository(self, repo_url: str) -> str:
         """
-        Orchestrates the modernization process.
+        Orchestrates the modernization process. It is the main function that orchestrates the modernization process.    
         """
         logger.info(f"Orchestrator processing repo: {repo_url}")
         
